@@ -43,6 +43,7 @@ li:first-letter {
     padding: 20px;
     border: 1px solid #dadde1;
     border-radius: 5px;
+
 }
 
 .indicators {
@@ -50,15 +51,8 @@ li:first-letter {
     margin-top: 20px;
 }
 
-.image-container {
-    width: 100%;
-}
 
-.city-image {
-    height: 200px;
-    float: right;
 
-}
 
 
 
