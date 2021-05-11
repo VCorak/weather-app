@@ -18,17 +18,47 @@ const getCity = async city => {
         `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`);
 
 
+    let lon = response.coord.lon;
+    let lat = response.coord.lat;
+    const forecastData = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={current,minutely,hourly,alerts}&appid=21d207d4e5449385a0586090096515c7`);
+    const res = await forecastData.json();
 
-   /* const lat = response.coords.lat;
-    const lon = response.coords.lon;
-    const forecast = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`);
-    const forecastResponse = await forecast.json();
+    console.log(res);
 
-    document.getElementById("forecast-report").innerHTML = forecastResponse.list[index];
-*/
+
+    let forecastElement = document.querySelector("#forecast-report");
+    forecastElement.innerHTML = null;
+    let forecast = null;
+
+    for (let index = 0; index < 6; index++) {
+        forecast = res.daily[index];
+        console.log(forecast);
+        let date = new Date(forecast.dt * 1000);
+        let days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'];
+        let name = days[date.getDay()];
+        forecastElement.innerHTML += `<div class="col-2">
+              <h3>
+                ${name}
+              </h3>
+              <img
+                src="http://openweathermap.org/img/wn/${
+            response.weather[0].icon
+        }@2x.png"
+                alt=""
+              />
+              <div class="hourly-forecast-temperature">
+                <strong>${Math.round(
+            forecast.temp.day
+        )}°</strong> 
+              </div>
+        </div>`;
+
+
+    }
 }
 
 button.addEventListener('click', () => getCity(input.value));
+
 
 
 
