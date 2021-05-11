@@ -46,7 +46,7 @@ const getCity = async city => {
               </h3>
               <img
                 src="http://openweathermap.org/img/wn/${
-            response.weather[0].icon
+            forecast.weather[0].icon
         }@2x.png"
                 alt=""
               />
