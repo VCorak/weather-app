@@ -14,8 +14,13 @@ const getCity = async city => {
     document.getElementById("description").innerHTML = response.weather[0].description;
     document.getElementById("humidity").innerHTML = `Humidity: ${response.main.humidity} %`;
     document.getElementById("wind").innerHTML = `Wind: ${response.wind.speed} km/h`;
-    document.getElementById("weather-icon").setAttribute("src",
-        `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`);
+
+
+    let weatherIcon = document.querySelector("#weather-icon");
+    weatherIcon.setAttribute(
+        "src",
+        `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`
+    );
 
 // Get forecast
     let lon = response.coord.lon;
