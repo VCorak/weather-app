@@ -17,20 +17,19 @@ const getCity = async city => {
     document.getElementById("weather-icon").setAttribute("src",
         `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`);
 
-
+// Get forecast
     let lon = response.coord.lon;
     let lat = response.coord.lat;
-    const forecastData = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={current,minutely,hourly,alerts}&appid=21d207d4e5449385a0586090096515c7`);
+    const forecastData = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={current,minutely,hourly,alerts}&appid=21d207d4e5449385a0586090096515c7&units=metric`);
     const res = await forecastData.json();
 
     console.log(res);
-
 
     let forecastElement = document.querySelector("#forecast-report");
     forecastElement.innerHTML = null;
     let forecast = null;
 
-    for (let index = 0; index < 6; index++) {
+    for (let index = 0; index < 5; index++) {
         forecast = res.daily[index];
         console.log(forecast);
         let date = new Date(forecast.dt * 1000);
@@ -52,7 +51,6 @@ const getCity = async city => {
         )}°</strong> 
               </div>
         </div>`;
-
 
     }
 }
