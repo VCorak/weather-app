@@ -15,6 +15,8 @@ searchCity("Antwerp");
 function cityWeather(response) {
     let city = document.querySelector("#city");
     city.innerHTML = response.data.name;
+    let date = document.querySelector("#date");
+    date.innerHTML = formatDate(response.data.dt * 1000);
     let temperature = document.querySelector("#main-temp");
     temperature.innerHTML = Math.round(response.data.main.temp);
     let description = document.querySelector("#description");
@@ -22,9 +24,43 @@ function cityWeather(response) {
     let mainIcon = document.querySelector("#weather-icon");
     mainIcon.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     mainIcon.setAttribute("alt", response.data.weather[0].description);
+    let humidity = document.querySelector("#humidity");
+    humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
+    let wind = document.querySelector("#wind");
+    wind.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
 
 }
 
+//Format date
+
+function formatDate(timestamp) {
+    let date = new Date(timestamp);
+
+    let daysInWeek = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+    ]
+    let currentDay = daysInWeek[date.getDay()];
+    return `${currentDay} ${formatHours(timestamp)}`;
+}
+
+function formatHours(timestamp) {
+    let date = new Date(timestamp);
+    let currentHour = date.getHours();
+    if (currentHour < 10) {
+        currentHour = `0${currentHour}`;
+    }
+    let currentMinutes = date.getMinutes();
+    if(currentMinutes < 10) {
+        currentMinutes = `0${currentMinutes}`;
+    }
+    return `${currentHour}:${currentMinutes}`;
+}
 // Displaying 5 day weather forecast
 function displayFiveDaysForecast(response) {
     let forecastData = document.querySelector("#forecast-report");
@@ -48,7 +84,6 @@ function displayFiveDaysForecast(response) {
         </div>`;
     }
 }
-
 
 
 // Get axios
