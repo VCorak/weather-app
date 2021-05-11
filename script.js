@@ -34,7 +34,7 @@ const getCity = async city => {
     forecastElement.innerHTML = null;
     let forecast = null;
 
-    for (let index = 0; index < 5; index++) {
+    for (let index = 1; index < 6; index++) {
         forecast = res.daily[index];
         console.log(forecast);
         let date = new Date(forecast.dt * 1000);
