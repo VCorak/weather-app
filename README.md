@@ -21,7 +21,7 @@ CONCLUSION
 
 I relly have to work on my time management, it took me two days to make this app work. When I get stuck on some problem I relly get stuck until I can figure it out and this takes somethimes a lot of time, pretty much opsseed with details and everything to work. And then I don't have time for CSS and just do basic stuff...
 
-https://media.giphy.com/media/ctREbqcfpElEQ896ls/giphy.gif
+https://media1.giphy.com/media/ctREbqcfpElEQ896ls/giphy.gif?cid=790b761180691d5f8c811c3d74c9cfbe64d77708e63d7f09&rid=giphy.gif&ct=g
 
 
 
