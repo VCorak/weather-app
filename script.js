@@ -89,7 +89,7 @@ const getCity = async city => {
         }@2x.png"
                 alt=""
               />
-              <div class="hourly-forecast-temperature">
+              <div class="five-days-forecast-temperature">
                 <strong>${Math.round(
             forecast.temp.day
         )}°</strong> 

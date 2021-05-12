@@ -62,40 +62,55 @@ li:first-letter {
     font-size: 64px;
     line-height: 1;
     font-weight: 400;
-    margin-top: 20px;
+    position: relative;
+    top: 12px;
 }
-
  .symbol {
      position: relative;
      font-size: 16px;
-     top: -34px;
+     top: -24px;
  }
 
 .five-days-forecast {
     margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .five-days-forecast h3 {
     color : rgb(186, 186, 186);
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 400;
+    text-align: center;
+    height: 15px;
+    line-height: 15px;
+    padding-top: 7px;
+}
 
+.five-days-forecast img {
+    display: block;
+    margin: 0 auto;
+    height: 68px;
+    width: 68px;
+}
+
+.five-days-forecast-temperature {
+    text-align: center;
+    color: rgb(135, 135, 135);
+    font-size: 17px;
+    font-weight: 400;
+    height: auto;
+    line-height: 15px;
+    white-space: nowrap;
+}
+
+.null, .first, .second, .third {
+    background-color: transparent;
 
 }
 
 
- .first {
-     background-color: yellow;
-
- }
-
-.second {
-    background-color: coral;
-}
-
-.third {
-    background-color: lightblue;
-}
 
 
 
