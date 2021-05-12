@@ -35,8 +35,17 @@ const getCity = async city => {
     const url = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=21d207d4e5449385a0586090096515c7&units=metric`);
     const response = await url.json();
 
-    console.log(response);
+   // console.log(response);
 
+    const randomImage = await fetch(`https://api.unsplash.com/search/photos?query=${city}-nature&client_id=Lgfa96r1w4FjuxvOUFRM-Ya4wz-BQQArBLMN6YwDlaU`);
+    const imageRes = await randomImage.json();
+
+   console.log(imageRes);
+
+    let bcgr = document.getElementById("container");
+    let ranImg = Math.floor(Math.random() * 9);
+    let gotImg = imageRes.results[ranImg].urls.regular;
+    bcgr.style.backgroundImage = `url ('${gotImg}')`;
 
     document.getElementById("city").innerHTML = response.name;
     document.getElementById("date").innerHTML = formatDate(response.dt * 1000);//
@@ -58,7 +67,7 @@ const getCity = async city => {
     const forecastData = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={current,minutely,hourly,alerts}&appid=21d207d4e5449385a0586090096515c7&units=metric`);
     const res = await forecastData.json();
 
-    console.log(res);
+   // console.log(res);
 
     let forecastElement = document.querySelector("#forecast-report");
     forecastElement.innerHTML = null;
@@ -91,7 +100,7 @@ const getCity = async city => {
 }
 
 button.addEventListener('click', ()  => getCity(input.value));
-onload(getCity("Antwerp"));
+onload = (getCity("Antwerp"));
 
 
 
