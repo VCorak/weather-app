@@ -6,7 +6,6 @@ body {
 }
 
 
-
 h1 {
     color: whitesmoke;
     font-size: 24px;
@@ -47,8 +46,8 @@ li:first-letter {
 .content-wrapper {
     max-width: 600px;
     margin: 30px auto;
-    background: #2980B9;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: #2980B9; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #FFFFFF, #6DD5FA, #2980B9); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
@@ -65,7 +64,7 @@ li:first-letter {
     margin-top: 20px;
 }
 
- img {
+img {
     margin-right: 5px;
     height: 100px;
     width: 100px;
@@ -79,11 +78,12 @@ li:first-letter {
     position: relative;
     top: 12px;
 }
- .symbol {
-     position: relative;
-     font-size: 16px;
-     top: -24px;
- }
+
+.symbol {
+    position: relative;
+    font-size: 16px;
+    top: -24px;
+}
 
 .five-days-forecast {
     margin-top: 10px;
@@ -93,7 +93,7 @@ li:first-letter {
 }
 
 .five-days-forecast h3 {
-    color : whitesmoke;
+    color: whitesmoke;
     font-size: 17px;
     font-weight: 400;
     text-align: center;

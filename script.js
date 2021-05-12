@@ -15,7 +15,7 @@ function formatDate(timestamp) {
         "Saturday",
     ];
     let currentDay = week[date.getDay()];
-    return`${currentDay} ${formatHours(timestamp)}`;
+    return `${currentDay} ${formatHours(timestamp)}`;
 }
 
 function formatHours(timestamp) {
@@ -25,7 +25,7 @@ function formatHours(timestamp) {
         currentHour = `0${currentHour}`;
     }
     let currentMinutes = date.getMinutes();
-    if(currentMinutes < 10 ) {
+    if (currentMinutes < 10) {
         currentMinutes = `0${currentMinutes}`;
     }
 
@@ -37,13 +37,13 @@ const getCity = async city => {
     const url = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=21d207d4e5449385a0586090096515c7&units=metric`);
     const response = await url.json();
 
-   // console.log(response);
+    // console.log(response);
 
     // Get image
     const randomImage = await fetch(`https://api.unsplash.com/search/photos?query=${city}-nature&client_id=Lgfa96r1w4FjuxvOUFRM-Ya4wz-BQQArBLMN6YwDlaU`);
     const imageRes = await randomImage.json();
 
-   //console.log(imageRes);
+    //console.log(imageRes);
 
     for (let index = 0; index < 9; index++) {
         image = imageRes.results[index].urls.regular;
@@ -71,7 +71,7 @@ const getCity = async city => {
     const forecastData = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={current,minutely,hourly,alerts}&appid=21d207d4e5449385a0586090096515c7&units=metric`);
     const res = await forecastData.json();
 
-   // console.log(res);
+    // console.log(res);
 
     let forecastElement = document.querySelector("#forecast-report");
     forecastElement.innerHTML = null;
@@ -105,7 +105,7 @@ const getCity = async city => {
     }
 }
 
-button.addEventListener('click', ()  => getCity(input.value));
+button.addEventListener('click', () => getCity(input.value));
 onload = (getCity("Antwerp"));
 
 
