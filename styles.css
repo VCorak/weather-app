@@ -51,13 +51,53 @@ li:first-letter {
     margin-top: 20px;
 }
 
-.five-days-forecast {
-    color: black;
+ img {
+    margin-right: 5px;
+    height: 100px;
+    width: 100px;
 }
 
-.button {
-    background-color: blue;
+#main-temp {
+    color: rgb(33, 33, 33);
+    font-size: 64px;
+    line-height: 1;
+    font-weight: 400;
+    margin-top: 20px;
 }
+
+ .symbol {
+     position: relative;
+     font-size: 16px;
+     top: -34px;
+ }
+
+.five-days-forecast {
+    margin-top: 10px;
+}
+
+.five-days-forecast h3 {
+    color : rgb(186, 186, 186);
+    font-size: 14px;
+    font-weight: 400;
+
+
+}
+
+
+ .first {
+     background-color: yellow;
+
+ }
+
+.second {
+    background-color: coral;
+}
+
+.third {
+    background-color: lightblue;
+}
+
+
 
 
 
