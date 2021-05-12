@@ -90,7 +90,8 @@ const getCity = async city => {
     }
 }
 
-button.addEventListener('click', () => getCity(input.value));
+button.addEventListener('click', ()  => getCity(input.value));
+onload(getCity("Antwerp"));
 
 
 
