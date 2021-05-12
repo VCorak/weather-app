@@ -81,7 +81,7 @@ const getCity = async city => {
         forecast = res.daily[index];
 
         //console.log(forecast);
-        
+
         let date = new Date(forecast.dt * 1000);
         let days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'];
         let name = days[date.getDay()];
