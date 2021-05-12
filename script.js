@@ -42,10 +42,9 @@ const getCity = async city => {
 
    console.log(imageRes);
 
-    let bcgr = document.getElementById("container");
-    let ranImg = Math.floor(Math.random() * 9);
-    let gotImg = imageRes.results[ranImg].urls.regular;
-    bcgr.style.backgroundImage = `url ('${gotImg}')`;
+   image = imageRes.results[0].urls.regular;
+   const backgr = document.getElementsByTagName("body")[0];
+   backgr.style.backgroundImage = 'url('+image+')';
 
     document.getElementById("city").innerHTML = response.name;
     document.getElementById("date").innerHTML = formatDate(response.dt * 1000);//
